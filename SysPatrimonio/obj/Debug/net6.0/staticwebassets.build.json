@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O0PIL1HjK8QPdyRMxO6oj1x90Xxu0DWv0PFr2kCykLs=",
+  "Hash": "7R7PLUYjPsqmcc1CV29rYzrTdnSdljqwXBl3qgdEhSE=",
   "Source": "SysPatrimonio",
   "BasePath": "_content/SysPatrimonio",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\leona\\TADS\\Programação Visual\\SysPatrimonio\\SysPatrimonio\\wwwroot\\img\\gestao-de-patrimonio-home.jpg",
+      "SourceId": "SysPatrimonio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leona\\TADS\\Programação Visual\\SysPatrimonio\\SysPatrimonio\\wwwroot\\",
+      "BasePath": "_content/SysPatrimonio",
+      "RelativePath": "img/gestao-de-patrimonio-home.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gestao-de-patrimonio-home.jpg"
     },
     {
       "Identity": "C:\\Users\\leona\\TADS\\Programação Visual\\SysPatrimonio\\SysPatrimonio\\wwwroot\\js\\site.js",

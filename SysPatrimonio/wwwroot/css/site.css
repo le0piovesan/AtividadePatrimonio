@@ -1,5 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: darkslategray;
+}
+
+a {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    color: darkolivegreen;
+}
+
 html {
   font-size: 14px;
+}
+
+body {
+    background-image: linear-gradient(120deg, #E7E9BB, #D4D3DD);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
 }
 
 @media (min-width: 768px) {
@@ -8,11 +31,16 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+#img-logo{
+    max-height: 50vh;
+    border-radius: 20px;
+    border: double;
+    border-width: 3px;
+    border-color: aliceblue;
+    opacity: 0.8;
 }
 
-body {
-  margin-bottom: 60px;
+#nav-custom{
+    background-color: whitesmoke;
 }
+

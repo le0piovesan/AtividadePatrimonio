@@ -4,15 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div>
+<h1>Patrimônios</h1>
+    <a asp-action="Create" class="btn btn-success mb-3">+ Criar Novo</a>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+
+<table class="table table-success table-striped table-hover table-bordered">
     <thead>
         <tr>
-            <th>
+                 <th>
                 @Html.DisplayNameFor(model => model.numetiqueta)
             </th>
             <th>
@@ -42,46 +43,47 @@
             <th>
                 @Html.DisplayNameFor(model => model.situacao)
             </th>
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.numetiqueta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nomepatrimonio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descricaopatrimonio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.valorpatrimonio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.marcamodelo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dataaquisicao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.databaixa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.numnf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.numserie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.situacao)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                 <th>
+                @Html.DisplayNameFor(model => model.numetiqueta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomepatrimonio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricaopatrimonio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorpatrimonio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marcamodelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataaquisicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.databaixa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numnf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numserie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.situacao)
+            </th>
+        
+            <td class="d-flex justify-content-evenly">          
+                <a asp-action="Edit" asp-route-id="@item.id" title="Editar"><i class="fa-solid fa-pen-to-square" style="color: gray; font-size: 24px"></i></a>
+                <a asp-action="Details" asp-route-id="@item.id" title="Detalhes"><i class="fa-solid fa-file-lines" style="color: green; font-size: 24px"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.id" title="Excluir"><i class="fa-solid fa-trash-can" style="color: red; font-size: 24px"></i></a>
             </td>
         </tr>
 }

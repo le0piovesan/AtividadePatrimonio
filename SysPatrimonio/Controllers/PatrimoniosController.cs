@@ -21,9 +21,31 @@ namespace SysPatrimonio.Controllers
         // GET: Patrimonios
         public async Task<IActionResult> Index()
         {
-              return _context.Patrimonios != null ? 
-                          View(await _context.Patrimonios.ToListAsync()) :
-                          Problem("Entity set 'Context.Patrimonios'  is null.");
+
+            List<DtoPatrimonio> lista = (from p in _context.Patrimonios
+                                           join l in _context.Locais on p.idlocal equals l.id
+                                           join c in _context.Categorias on p.idcategoria equals c.id
+                                           join d in _context.Departamentos on p.iddepartamento equals d.id
+                                           select new DtoPatrimonio
+                                           {
+                                               id = p.id,
+                                               numetiqueta = p.numetiqueta,
+                                               nomepatrimonio = p.nomepatrimonio,
+                                               descricaopatrimonio = p.descricaopatrimonio,
+                                               valorpatrimonio = p.valorpatrimonio,
+                                               marcamodelo = p.marcamodelo,
+                                               dataaquisicao = p.dataaquisicao,
+                                               databaixa = p.databaixa,
+                                               numnf = p.numnf,
+                                               numserie = p.numserie,
+                                               situacao = p.situacao
+                                           }).ToList();
+
+            return View(lista);
+
+            //return _context.Patrimonios != null ? 
+            //              View(await _context.Patrimonios.ToListAsync()) :
+            //              Problem("Entity set 'Context.Patrimonios'  is null.");
         }
 
         // GET: Patrimonios/Details/5
@@ -47,6 +69,10 @@ namespace SysPatrimonio.Controllers
         // GET: Patrimonios/Create
         public IActionResult Create()
         {
+            ViewBag.Categoria = new SelectList(_context.Categorias, "id", "nomecategoria");
+            ViewBag.Local = new SelectList(_context.Locais, "id", "nomelocal");
+            ViewBag.Departamento = new SelectList(_context.Departamentos, "id", "nomedepartamento");
+
             return View();
         }
 

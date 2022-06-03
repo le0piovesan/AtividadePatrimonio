@@ -6,6 +6,7 @@
 
 <h1>Adicionar novo departamento</h1>
 
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,13 +23,12 @@
                 <span asp-validation-for="descricaodepartamento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idlocal" class="control-label"></label>
-                <input asp-for="idlocal" class="form-control" />
-                <span asp-validation-for="idlocal" class="text-danger"></span>
+                <select asp-items=@ViewBag.Local2 asp-for="idlocal" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-success mt-3 mb-3" />
             </div>
+
         </form>
     </div>
 </div>
@@ -38,5 +38,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

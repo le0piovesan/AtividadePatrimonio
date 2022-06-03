@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+
+
 <div>
 <h1>Usuários</h1>
     <a asp-action="Create" class="btn btn-success mb-3">+ Criar Novo</a>
@@ -14,16 +16,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.login)
+                Login
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.senha)
+                Senha
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.status)
+                Status
             </th>
         </tr>
     </thead>
@@ -49,5 +51,15 @@
             </td>
         </tr>
 }
+
     </tbody>
 </table>
+
+                <p>
+    @using (Html.BeginForm())
+    {
+        <text>Nome</text>@Html.DropDownList("nome", new SelectList(ViewBag.Nome))
+        <text>Login</text>@Html.DropDownList("login", new SelectList(ViewBag.Login))
+        <input type="submit" value="Procurar"/>
+    }
+</p>

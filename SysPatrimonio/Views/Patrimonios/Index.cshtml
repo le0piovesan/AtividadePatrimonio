@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SysPatrimonio.Models.DbPatrimonio>
+﻿@model IEnumerable<SysPatrimonio.Models.DtoPatrimonio>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,35 +13,35 @@
 <table class="table table-success table-striped table-hover table-bordered">
     <thead>
         <tr>
-                 <th>
-                @Html.DisplayNameFor(model => model.numetiqueta)
+            <th>
+                Número Etiqueta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nomepatrimonio)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricaopatrimonio)
+                Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.valorpatrimonio)
+                Valor
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.marcamodelo)
+                Marca Modelo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dataaquisicao)
+                Data Aquisição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.databaixa)
+                Data Baixa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.numnf)
+                Número NF
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.numserie)
+                Número Série
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.situacao)
+                Situação
             </th>
            
         </tr>

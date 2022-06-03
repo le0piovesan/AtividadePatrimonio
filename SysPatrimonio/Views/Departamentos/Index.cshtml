@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SysPatrimonio.Models.DbDepartamento>
+﻿@model IEnumerable<SysPatrimonio.Models.DtoDepartamento>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,13 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nomedepartamento)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricaodepartamento)
+                Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.idlocal)
+                Nome Local
             </th>
          
         </tr>
@@ -35,7 +35,7 @@
                 @Html.DisplayFor(modelItem => item.descricaodepartamento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idlocal)
+                @Html.DisplayFor(modelItem => item.nomelocal)
             </td>
          
             <td class="d-flex justify-content-evenly">          

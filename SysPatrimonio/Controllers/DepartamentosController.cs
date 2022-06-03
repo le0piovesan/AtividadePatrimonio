@@ -21,9 +21,21 @@ namespace SysPatrimonio.Controllers
         // GET: Departamentos
         public async Task<IActionResult> Index()
         {
-              return _context.Departamentos != null ? 
-                          View(await _context.Departamentos.ToListAsync()) :
-                          Problem("Entity set 'Context.Departamentos'  is null.");
+
+            List<DtoDepartamento> lista = (from d in _context.Departamentos
+                                           join l in _context.Locais on d.idlocal equals l.id
+                                           select new DtoDepartamento
+                                           {
+                                               id = d.id,
+                                               nomedepartamento = d.nomedepartamento,
+                                               descricaodepartamento = d.descricaodepartamento,
+                                               nomelocal = l.nomelocal
+                                           }).ToList();
+
+            return View(lista);
+            //return _context.Departamentos != null ? 
+            //            View(await _context.Departamentos.ToListAsync()) :
+            //            Problem("Entity set 'Context.Departamentos'  is null.");
         }
 
         // GET: Departamentos/Details/5
@@ -47,6 +59,15 @@ namespace SysPatrimonio.Controllers
         // GET: Departamentos/Create
         public IActionResult Create()
         {
+            //ViewBag.Local = (from c in _context.Locais
+            //                 select new
+            //                 {
+            //                     text = c.nomelocal,
+            //                     value = c.id
+            //                 }).Distinct();
+
+            ViewBag.Local2 = new SelectList(_context.Locais, "id", "nomelocal");
+
             return View();
         }
 
@@ -149,14 +170,14 @@ namespace SysPatrimonio.Controllers
             {
                 _context.Departamentos.Remove(dbDepartamento);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DbDepartamentoExists(int id)
         {
-          return (_context.Departamentos?.Any(e => e.id == id)).GetValueOrDefault();
+            return (_context.Departamentos?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }
